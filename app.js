@@ -23,15 +23,15 @@ app.post("/", function(req, res){
 
     https.get(url, function(response){
        response.on("data", function(data){
-        var WEATHERdata = JSON.parse(data);
+        const WEATHERdata = JSON.parse(data);
 
-        var temp = WEATHERdata.main.temp;
+        const temp = WEATHERdata.main.temp;
 
-        var description = WEATHERdata.weather[0].description;
+        const description = WEATHERdata.weather[0].description;
 
-        var icon = WEATHERdata.weather[0].icon;
+        const icon = WEATHERdata.weather[0].icon;
 
-        var imageUrl = "https://openweathermap.org/img/wn/"+ icon + "@2x.png"; 
+        const imageUrl = "https://openweathermap.org/img/wn/"+ icon + "@2x.png"; 
         
         res.write("<p>The Weather forecast currently is " + description + "</p>");
         res.write("<h1>The Temperature in "+ query +" right now is " + temp + " degrees Celcius.</h1>");
