@@ -44,6 +44,6 @@ app.post("/", function(req, res){
 
 
 
-app.listen(3005, function(){
+app.listen(process.env.PORT || 3005, function(){
     console.log("Server is running on port no 3005");
 });
